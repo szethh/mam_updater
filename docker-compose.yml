@@ -2,11 +2,12 @@ version: "3"
 
 services:
   mam_updater:
+    container_name: mam_updater
     build:
       context: .
       dockerfile: Dockerfile
     environment:
       - CRON_SCHEDULE=0 */2 * * *
     volumes:
-      - ./data:/data
+      - ./data:/data # add a mam.cookies file in here!
     restart: unless-stopped
