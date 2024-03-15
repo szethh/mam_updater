@@ -3,6 +3,7 @@ FROM alpine:latest
 RUN apk add --no-cache \
     bash \
     tzdata \
+    curl \
     && rm -rf /var/cache/apk/*
 
 ENV TZ=UTC
